@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .result-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .score-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .score-card h3 {
+            font-size: 1.8rem;
+            color: #4caf50;
+            margin-bottom: 10px;
+        }
+
+        .score-card p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .score {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff5722;
+            margin-bottom: 20px;
+        }
+
+        .result-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .result-btn:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            .result-container {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .score-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .score {
+                font-size: 2rem;
+            }
+
+            .result-btn {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h2>Quiz Results</h2>
+        <div class="score-card">
+            <h3>Welcome {{ username }}</h3>
+            <p>Password: {{ password }}</p>
+            <h3>Your Score:</h3>
+            <div class="score">{{ score }}</div>
+            <p>Questions Attempted: {{ total }}</p>
+            <p>Correct Answers: {{ score }}</p>
+            <p>Wrong Answers: {{ wrong }}</p>
+            <p>Questions Skipped: {{ skipped }}</p>
+        </div>
+        <button class="result-btn" onclick="window.location.href='/quiz'">Back to Quiz</button>
+    </div>
+</body>
+</html>
